@@ -1,0 +1,11 @@
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Release\GlobalTools.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Release\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Release\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\obj\Release\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\obj\Release\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Release\GlobalTools.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Release\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Release\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Release\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Release\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Release\GlobalTools.csprojResolveAssemblyReference.cache

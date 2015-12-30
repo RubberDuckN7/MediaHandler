@@ -1,0 +1,26 @@
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.csprojResolveAssemblyReference.cache

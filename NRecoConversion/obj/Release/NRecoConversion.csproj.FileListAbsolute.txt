@@ -1,0 +1,12 @@
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Release\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Release\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Release\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Release\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Release\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Release\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\NRecoConversion.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Release\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Release\NRecoConversion.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Release\NRecoConversion.pdb

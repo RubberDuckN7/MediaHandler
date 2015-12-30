@@ -1,0 +1,6 @@
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\ImageProcessing.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\ImageProcessing.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Release\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Release\ImageProcessing.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Release\ImageProcessing.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Release\ImageProcessing.pdb

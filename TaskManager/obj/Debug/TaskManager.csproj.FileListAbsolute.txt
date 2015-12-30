@@ -1,0 +1,13 @@
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NLog.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\TaskManager.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NLog.dll
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NReco.VideoConverter.dll
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NLog.xml
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NReco.VideoConverter.xml
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\obj\Debug\TaskManager.pdb

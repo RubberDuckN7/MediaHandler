@@ -1,0 +1,11 @@
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\bin\Debug\ImageProcessing.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\ImageProcessing.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.pdb

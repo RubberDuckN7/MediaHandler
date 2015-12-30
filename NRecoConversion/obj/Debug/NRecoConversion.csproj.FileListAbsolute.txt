@@ -1,0 +1,30 @@
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\documents\visual studio 2013\Projects\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV\Kandidat\TaskManager - Affinity seems to work fix robust and add scheduler\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\0 DSV Kandidatarbete\TaskManager - Rewrite robustness\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.pdb
