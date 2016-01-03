@@ -24,3 +24,14 @@ C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\bin\D
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.exe
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.pdb
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\GlobalTools\obj\Debug\GlobalTools.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\Gith rep\TaskManager\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Gith rep\TaskManager\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\GlobalTools\obj\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\bin\Debug\GlobalTools.exe.config
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\bin\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\bin\Debug\GlobalTools.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\obj\Debug\GlobalTools.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\obj\Debug\GlobalTools.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\GlobalTools\obj\Debug\GlobalTools.pdb

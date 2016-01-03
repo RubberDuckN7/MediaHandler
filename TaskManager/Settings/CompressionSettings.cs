@@ -9,8 +9,5 @@ namespace TaskManager.Settings
     public class CompressionSettings
     {
         public static string COMPRESSION_PROCESS_NAME = "";
-        public static string ERROR_LOG_NAME = "";
-        public static string OUTPUT_FRAMERATE = "";
-        public static string OUTPUT_BITRATE = "";
     }
 }

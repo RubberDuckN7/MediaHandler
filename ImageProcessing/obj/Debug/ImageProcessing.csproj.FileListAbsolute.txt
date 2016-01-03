@@ -9,3 +9,15 @@ C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\D
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.exe
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\ImageProcessing.exe.config
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Gith rep\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\ImageProcessing\obj\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\ImageProcessing.exe.config
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\ImageProcessing.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\ImageProcessing\obj\Debug\ImageProcessing.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\ImageProcessing\obj\Debug\ImageProcessing.pdb

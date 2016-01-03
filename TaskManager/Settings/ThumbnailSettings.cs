@@ -10,5 +10,7 @@ namespace TaskManager.Settings
     {
         // So there is no need to "hardcode" it :P
         public static string THUMBNAIL_NAME = "_thumbnail";
+        public static int RESOLUTION_WIDTH = 72;
+        public static int RESOLUTION_HEIGHT = 72;
     }
 }

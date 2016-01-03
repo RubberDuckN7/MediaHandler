@@ -92,7 +92,7 @@ namespace NRecoConversion
             string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
             string folder = values["folderOutput"]; // fileNameNoExt;
             //folder = Path.Combine(values["folderOutput"], folder);
-            folder = Path.Combine(folder, "Converted");
+            //folder = Path.Combine(folder, "Converted");
 
             string folderInput = values["folderInput"];
 
@@ -109,7 +109,7 @@ namespace NRecoConversion
             FFMpegConverter FFMpegConv;
             FFMpegConv = new FFMpegConverter();
 
-            string convertedPath = Path.Combine(folder, fileNameNoExt + "." + format);
+            string convertedPath = Path.Combine(folder, "converted_" + fileNameNoExt + "." + format);
 
             int returnCode = (int)LogCodes.RETURN.OK;
             // Convert

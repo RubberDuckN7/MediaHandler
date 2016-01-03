@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 
-namespace TaskManager.Processes
+namespace TaskManager
 {
     public class ImageHelper
     {

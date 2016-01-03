@@ -11,6 +11,8 @@ using System.Collections;
 using System.Configuration;
 using System.Collections.Specialized;
 
+using NReco.VideoConverter;
+
 namespace TaskManager
 {
     public class Program
@@ -30,7 +32,7 @@ namespace TaskManager
                 if (pFormat == (Settings.ConversionSettings.SUPPORTED_FORMATS[f]).ToLower())
                 {
                     Console.WriteLine("Type video.");
-                    Console.ReadLine();
+                    //Console.ReadLine();
                     return 1;
                 }
             }
@@ -43,35 +45,201 @@ namespace TaskManager
                 if (pFormat == Settings.ImageSettings.SUPPORTED_FORMATS[f].ToLower())
                 {
                     Console.WriteLine("Type image.");
-                    Console.ReadLine();
+                    //Console.ReadLine();
                     return 2;
                 }
             }
 
             Console.WriteLine("Type unsupported.");
-            Console.ReadLine();
+            //Console.ReadLine();
             return -1;
         }
 
-        private static int ConvertAndCompressVideo(string pFilePath, string pOutputFolder)
+        /// <summary>
+        /// For easier reading I've put everything into 3 functions, rather than process classes.
+        /// This should clarify more how everything works. 
+        /// </summary>
+        /// <param name="pResourceHandler"></param>
+        /// <param name="pFilePath"></param>
+        /// <param name="pOutputFolder"></param>
+        /// <param name="pAffinity"></param>
+        /// <returns></returns>
+        private static int ConvertAndCompressVideo(Cleanup.ResourceHandler pResourceHandler, string pFilePath, string pOutputFolder, int pAffinity)
         {
+            ///////////////////////////// FIRST STEP IS TO CONVERT FILE /////////////////////////////
+            string arguments = "";
+            string delimiter = "&";
+
+            string fileName = Path.GetFileName(pFilePath);
+            string rootFolder = Path.GetDirectoryName(pFilePath);
+
+            arguments += "format" + delimiter + Settings.ConversionSettings.FORMAT + " ";
+            arguments += "fileName" + delimiter + fileName + " ";
+            arguments += "folderInput" + delimiter + rootFolder + " ";
+            arguments += "folderOutput" + delimiter + pOutputFolder + " ";
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = Settings.ConversionSettings.CONVERSION_PROCESS_NAME,
+                    Arguments = arguments
+                }
+            };
+
+            try
+            {
+                process.Start();
+                process.ProcessorAffinity = (System.IntPtr)pAffinity;
+                process.WaitForExit();
+            }
+            catch (Exception e)
+            {
+                string err = e.ToString();
+                Console.WriteLine("Failed process image: " + err);
+                return -1;
+            }
+
+            ///////////////////////////// COMPRESS FILE /////////////////////////////
+            string fileNoExt = Path.GetFileNameWithoutExtension(pFilePath);
+            string convertedFileName = "converted_" + fileNoExt + "." + Settings.ConversionSettings.FORMAT;
+
+            pResourceHandler.AddForDeletionFile(Path.Combine(pOutputFolder, convertedFileName));
+
+            string newFilePath = Path.GetDirectoryName(pFilePath);
+            newFilePath = Path.Combine(newFilePath, Settings.MediaSettings.OUTPUT_FOLDER);
+            newFilePath = Path.Combine(newFilePath, convertedFileName);
+                
+            string outputFilePath = Path.Combine(pOutputFolder, fileNoExt + "." + Settings.ConversionSettings.FORMAT);
+
+            return CompressVideo(pResourceHandler, newFilePath, outputFilePath, pAffinity);
+        }
+
+        private static int CompressVideo(Cleanup.ResourceHandler pResourceHandler, string pFilePath, string pFilePathOut, int pAffinity)
+        {
+            ///////////////////////////// CREATE ARGUMENTS AND START COMPRESSING PROCESS /////////////////////////////
+            string arguments = "";
+
+            arguments += "-i " + pFilePath + " ";
+            arguments += pFilePathOut;
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = Settings.CompressionSettings.COMPRESSION_PROCESS_NAME,
+                    Arguments = arguments
+                }
+            };
+
+            try
+            {
+                process.Start();
+                process.ProcessorAffinity = (System.IntPtr)pAffinity;
+                process.WaitForExit();
+            }
+            catch (Exception e)
+            {
+                string err = e.ToString();
+                Console.WriteLine("Failed process image: " + err);
+                return -1;
+            }
+
+            ///////////////////////////// THIS IS THE SAME CODE I'VE GOT, IT CREATES THUMBNAIL /////////////////////////////
+            string compressedFolder = Path.GetDirectoryName(pFilePath);
+            string compressed = pFilePathOut;
+
+            var ffMpegConverter = new FFMpegConverter();
+
+            string fileNameNoExt = Path.GetFileNameWithoutExtension(pFilePath);
+            string outputFolder = Path.GetDirectoryName(pFilePathOut);
+
+            string tempfile = Path.Combine(outputFolder, "temp.jpeg");
+            string thumbnail = Path.Combine(outputFolder, fileNameNoExt + "_thumbnail.jpeg");
+
+            ffMpegConverter.GetVideoThumbnail(pFilePathOut,
+                tempfile);
+
+            int width = 120;
+            int resWidth = 72;
+            int resHeight = 72;
+
+            var imgInput = new System.Drawing.Bitmap(tempfile);
+
+            // Initialize from Settings.
+            width = ImageHelper.GetImageType(imgInput.Width * imgInput.Height);
+            resWidth = Settings.ThumbnailSettings.RESOLUTION_WIDTH;
+            resHeight = Settings.ThumbnailSettings.RESOLUTION_HEIGHT;
+
+            double y = imgInput.Height;
+            double x = imgInput.Width;
+
+            var imgOutput = new System.Drawing.Bitmap(width, (int)(y * width / x));
+            imgOutput.SetResolution(resWidth, resHeight); // Set DPI of image (xDpi, yDpi)
+
+            System.Drawing.Graphics graphics = System.Drawing.Graphics.FromImage(imgOutput);
+            graphics.Clear(System.Drawing.Color.White);
+            graphics.DrawImage(imgInput, new System.Drawing.Rectangle(0, 0, width, (int)(y * width / x)),
+            new System.Drawing.Rectangle(0, 0, (int)x, (int)y), System.Drawing.GraphicsUnit.Pixel);
+
+            // Alright, overwriting doesn't work, so save as temp file then resize and remove temp file.
+            imgOutput.Save(thumbnail, System.Drawing.Imaging.ImageFormat.Jpeg);
+            imgInput.Dispose();
+
+            File.Delete(tempfile);
+
             return 0;
         }
 
-        private static int CompressVideo(string pFilePath, string pOutputFolder)
+        private static int ProcessImage(Cleanup.ResourceHandler pResourceHandler, string pFilePath, string pOutputFolder, int pAffinity)
         {
-            return 0;
-        }
+            // INITIALIZE ARGUMENTS FOR PROCESS!!!!
+            string arguments = "";
+            string delimiter = "&";
 
-        private static int ProcessImage(string pFilePath, string pOutputFolder)
-        {
+            string inputFolder = Path.GetDirectoryName(pFilePath);
+            string fileName = Path.GetFileName(pFilePath);
+
+            int width = ImageHelper.GetImageTypeFromPath(pFilePath);
+
+            arguments += "folderInput" + delimiter + inputFolder + " ";
+            arguments += "folderOutput" + delimiter + pOutputFolder + " ";
+            arguments += "fileName" + delimiter + fileName + " ";
+            arguments += "format" + delimiter + "jpeg" + " ";
+            arguments += "width" + delimiter + width + " ";
+            arguments += "resolutionWidth" + delimiter + Settings.ThumbnailSettings.RESOLUTION_WIDTH + " ";
+            arguments += "resolutionHeight" + delimiter + Settings.ThumbnailSettings.RESOLUTION_HEIGHT;
+
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = Settings.ImageSettings.PROCESS_NAME,
+                    Arguments = arguments
+                }
+            };
+
+            try
+            {
+                process.Start();
+                process.ProcessorAffinity = (System.IntPtr)pAffinity;
+                process.WaitForExit();
+            }
+            catch (Exception e)
+            {
+                string err = e.ToString();
+                Console.WriteLine("Failed process image: " + err);
+                return -1;
+            }
 
             return 0;
         }
 
         static int Main(string[] args)
         {
-            //args = new string[1] {"C:/Users/Spyro/Documents/Gith rep/TaskManager/TaskManager/bin/Debug/Input/image/cpu.png"};
+            //args = new string[1] {"Input/image/cpu.png"};
+            //args = new string[1] { "Input/movie1/movie.mp4" };
+            //args = new string[1] { "Input/movie2/movie.mov" };
 
             ///////////////////////////// CHECK FOR EMPTY ARGUMENTS /////////////////////////////
             if(args.Length == 0)
@@ -81,6 +249,11 @@ namespace TaskManager
                 return -1;
             }
 
+            ///////////////////////////// INITIIALIZE GLOBAL SETTINGS /////////////////////////////
+            GlobalTools.LogCodes.InitializeDescriptions();
+
+            Settings.SettingsHelper.InitializeSettingsFromAppConfig();
+
             ///////////////////////////// CONSTRUCT FILE PATHS /////////////////////////////
             string filePath = "";
             for (int i = 0; i < args.Length; i++)
@@ -89,13 +262,8 @@ namespace TaskManager
             }
 
             string folderInput = Path.GetDirectoryName(filePath);
-            string folderOutput = Path.Combine(folderInput, "Output");
+            string folderOutput = Path.Combine(folderInput, Settings.MediaSettings.OUTPUT_FOLDER);
             string fileName = Path.GetFileName(filePath);
-
-            ///////////////////////////// INITIIALIZE GLOBAL SETTINGS /////////////////////////////
-            GlobalTools.LogCodes.InitializeDescriptions();
-            Settings.SettingsHelper.InitializeDefaultSettings();
-            Settings.SettingsHelper.InitializeSettingsFromAppConfig();
 
             ///////////////////////////// CHECK IF FILES/FOLDERS EXIST /////////////////////////////
             if(File.Exists(filePath) == false)
@@ -126,279 +294,53 @@ namespace TaskManager
 
             ///////////////////////////// ADD FILES TO BE DELETED WHEN FINISHED /////////////////////////////
             Cleanup.ResourceHandler handler = new Cleanup.ResourceHandler();
-            //handler.AddForDeletionFile(filePath);
+            handler.AddForDeletionFile(filePath);
 
-            Processes.TaskInterface task = null;
+            ///////////////////////////// HERE STARTS THE PROCESSES /////////////////////////////
 
+            int resultCode = 0;
             int affinity = 0;
 
-            ///////////////////////////// CREATE PROCESS DEPENDING ON TYPE /////////////////////////////
-            if(type == 1)
+            if (type == 1)
             {
-                Console.WriteLine("Actual format: " + extension + " format needed: " + Settings.ConversionSettings.FORMAT);
+                bool isSameFormat = (extension == Settings.ConversionSettings.FORMAT);
 
-                int core = 1;
-
-                for (int i = 0; i < Settings.SchedulerSettings.CPU_CORES.Length; i++)
+                for (int i = 0; i < Settings.MediaSettings.CORES_VIDEO.Length; i++)
                 {
-                    core = Settings.SchedulerSettings.CPU_CORES[i];
+                    int core = Settings.MediaSettings.CORES_VIDEO[i];
                     affinity = affinity | (1 << core - 1);
                 }
 
-                ///////////////////////////// VIDEO TYPE SKIP CONVERSION /////////////////////////////
-                if (extension == (Settings.ConversionSettings.FORMAT))
+                ///////////////////////////// IT IS SAME FORMAT, SKIP CONVERSION /////////////////////////////
+                if(isSameFormat)
                 {
-                    string mainFolder = folderOutput; // Path.Combine(folderOutput, Path.GetFileNameWithoutExtension(fileName));
-                    string convertFolder = folderInput;
-                    string convertedFileName = fileName;
-
-                    Console.WriteLine("Compression process is created.");
-
-                    task = new Processes.CompressionProcess(handler, mainFolder, convertFolder, convertedFileName);
-
-                    task.CPUMask = affinity;
-                    task.Run();
+                    string outputFilePath = Path.Combine(folderOutput, fileName);
+                    resultCode = CompressVideo(handler, filePath, outputFilePath, affinity);
                 }
-                ///////////////////////////// VIDEO DO CONVERSION /////////////////////////////
+                ///////////////////////////// DO CONVERSION AND COMPRESSION /////////////////////////////
                 else
                 {
-                    Console.WriteLine("Conversion process is created.");
-
-                    task = new Processes.ConversionProcess(handler, folderInput, folderOutput, fileName);
-
-                    task.CPUMask = affinity;
-                    task.Run();
-
-                    Console.WriteLine("Compression process is created.");
-
-                    string convertedFileName = Path.GetFileNameWithoutExtension(fileName) + "." + Settings.ConversionSettings.FORMAT;
-                    string convertedFolder = Path.Combine(folderOutput, "Converted");
-
-                    //string outputFolder = Path.Combine("")
-
-                    string mainFolder = folderOutput; // Path.Combine(folderOutput, Path.GetFileNameWithoutExtension(fileName));
-                    task = new Processes.CompressionProcess(handler, mainFolder, convertedFolder, convertedFileName);
-                    //
-                    task.CPUMask = affinity;
-                    task.Run();
-                }    
+                    resultCode = ConvertAndCompressVideo(handler, filePath, folderOutput, affinity);
+                }
             }
             else if(type == 2)
             {
-                int width = Processes.ImageHelper.GetImageTypeFromPath(filePath);
-                task = new Processes.ImageProcess(handler, folderInput, folderOutput, fileName, width);
+                for (int i = 0; i < Settings.MediaSettings.CORES_IMAGE.Length; i++)
+                {
+                    int core = Settings.MediaSettings.CORES_IMAGE[i];
+                    affinity = affinity | (1 << core - 1);
+                }
 
-                int core = 1;
-                affinity = affinity | (1 << core - 1);
-
-                task.CPUMask = affinity;
-                task.Run();
+                resultCode = ProcessImage(handler, filePath, folderOutput, affinity);
             }
 
 
-            // if(task == null)
-            // {
-            //     Console.WriteLine("Failed to create process.");
-            //     Console.ReadLine();
-            //     return -1;
-            // }
-            // 
-            // Console.WriteLine("Press enter to execute process.");
-            // 
-            // //Processes.ProcessTaskInterface proc = (Processes.ProcessTaskInterface)task;
-            // 
-            // //Console.WriteLine("Name: " + proc.ProcessName);
-            // //Console.WriteLine("Arguments: " + proc.ProcessArguments);
-            // Console.ReadLine();
-
-
-            
-            
-            
-
-
-            // if (type == 1) // Video
-            // {
-            //     string format = Settings.ConversionSettings.FORMAT;
-            // 
-            //     string folderOutput = Settings.ConversionSettings.OUTPUT_FOLDER;
-            // 
-            //     Cleanup.ResourceHandler handler = new Cleanup.ResourceHandler();
-            //     handler.AddForDeletionFile(Path.Combine(folderInput, fileName));
-            // 
-            //     Console.WriteLine("=======================================================================");
-            // 
-            //     if (ext == ("." + format))
-            //     {
-            //         string mainFolder = Path.Combine(folderOutput, Path.GetFileNameWithoutExtension(fileName));
-            //         string convertFolder = folderInput;
-            //         string convertedFileName = fileName;
-            // 
-            //         Console.WriteLine("SCANNER: Same format, adding compression task - " + fileName);
-            // 
-            //         int workload = Workloads.Calculate(info);
-            // 
-            //         task = new MediaProcesses.CompressionProcess(handler, workload, mainFolder, convertFolder, convertedFileName);
-            //     }
-            //     else
-            //     {
-            //         Console.WriteLine("SCANNER: Adding for conversion file: " + fileName);
-            // 
-            //         int workload = Workloads.Calculate(info);
-            // 
-            //         task = new MediaProcesses.ConversionProcess(handler, workload, folderInput, folderOutput, fileName);
-            //     }
-            // }
-            // else if (supported == 2) // Image
-            // {
-            //     
-            //     
-            // 
-            //     
-            //     
-            // 
-            //     
-            // 
-            //     
-            // 
-            //     
-            //     
-            // 
-            //     
-            // }
-            // 
-
-            
-
-
-
-
-
-
+            ///////////////////////////// DELETE INPUT AND OTHER TEMPORARY CREATED FILES. /////////////////////////////
+            //handler.SafeRelease();
 
             Console.WriteLine("Program ended.");
             Console.ReadLine();
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             return 0;
-
-            // /*
-            //  * Filnamn, kärnor info. , tider, filinfo, workload, size, updated size, errors,
-            //  * programstart time, start - finished time
-            //  */
-            // 
-            // //return;
-            // 
-            // // So if there is unforseen event that settings has not been initialized, have at least some
-            // // default values.
-            // 
-            // 
-            // // Read all settings here.
-            // // ----------------------------------------------------------------------------------------------------
-            // 
-            // 
-            // // ----------------------------------------------------------------------------------------------------
-            // string output = Settings.ConversionSettings.OUTPUT_FOLDER; // "../Resources/Output/";
-            // 
-            // // Alright, I honestly don't know exactly why but it seems that 
-            // // this may not execute fast enough and continues without waiting for the 
-            // // finished removal/creation before proceding and thus it will give error
-            // // in process task that such folder does not exist.
-            // // Addint sleep time seems to "fix" it.
-            // if (Directory.Exists(output) == true)
-            // {
-            //     Directory.Delete(output, true);
-            //     System.Threading.Thread.Sleep(200);
-            // }
-            // Directory.CreateDirectory(output);
-            // System.Threading.Thread.Sleep(200);
-            // 
-            // string input = "../Resources/Input/";
-            // string restore = "../Resources/Input/Restore/";
-            // 
-            // if(Directory.Exists(input) == false)
-            // {
-            //     Directory.CreateDirectory(input);
-            // }
-            // if(Directory.Exists(restore) == false)
-            // {
-            //     Directory.CreateDirectory(restore);
-            // }
-            // System.Threading.Thread.Sleep(200);
-            // 
-            // // Fill Input folder
-            // // ----------------------------------------------------------------------------------------------------
-            // string[] restoreFiles = Directory.GetFiles(restore);
-            // Console.WriteLine("Restoring files: " + restoreFiles.Length);
-            // for (int i = 0; i < restoreFiles.Length; i++)
-            // {
-            //     string file = Path.GetFileName(restoreFiles[i]);
-            //     file = file.Replace(" ", "");
-            //     string dest = Path.Combine(input, file);
-            //     if (File.Exists(dest) == false)
-            //     {
-            //         File.Copy(restoreFiles[i], dest);
-            //     }
-            // }
-            // 
-            // Console.WriteLine("All files are moved to Input folder.");
-            // 
-            // // Init
-            // // ----------------------------------------------------------------------------------------------------
-            // // Make sure all configs are loaded BEFORE any work is started.
-            // GlobalScheduleHandler.Initialize("../Resources/Config/conf_scheduler.ini",
-            //                                  "../Resources/Config/conf_conversion.ini",
-            //                                  "../Resources/Config/conf_compression.ini",
-            //                                  "../Resources/Config/conf_image.ini");
-            // 
-            // // Start scanner
-            // // ----------------------------------------------------------------------------------------------------
-            // MediaProcesses.ScanningFolder scan = new MediaProcesses.ScanningFolder();
-            // System.Threading.Thread scanningThread = new System.Threading.Thread(new System.Threading.ThreadStart(scan.Run));
-            // scanningThread.Start();
-            // 
-            // // just this once, wait for all tasks to be added.
-            // scanningThread.Join();
-            // 
-            // // Start
-            // // ----------------------------------------------------------------------------------------------------
-            // 
-            // Console.WriteLine("Starting TaskManager, it will loop forever until closed.");
-            // 
-            // // This maybe will be changed a little into a better way to run on a separate thread
-            // // and this main thread will wait for a certain input to "close" properly. 
-            // // For example a while(true) ReadLine("Q to exit"); or something.
-            // GlobalScheduleHandler.ProcessTasks();
-            // 
-            // // End 
-            // // ----------------------------------------------------------------------------------------------------
-            // Console.WriteLine("Program ended. Press enter.");
-            // Console.ReadLine();
         }
     }
 }

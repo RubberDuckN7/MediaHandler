@@ -28,3 +28,15 @@ C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\TaskManager\bin\D
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.exe
 C:\Users\Spyro\Documents\Bitbucket rep\TaskManager\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Gith rep\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Gith rep\TaskManager\NRecoConversion\obj\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\NRecoConversion.exe.config
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\TaskManager\bin\Debug\NRecoConversion.pdb
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\NRecoConversion\obj\Debug\NRecoConversion.csprojResolveAssemblyReference.cache
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\NRecoConversion\obj\Debug\NRecoConversion.exe
+C:\Users\Spyro\Documents\Gith rep\MediaHandler\NRecoConversion\obj\Debug\NRecoConversion.pdb

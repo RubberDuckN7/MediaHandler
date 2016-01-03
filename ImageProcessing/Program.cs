@@ -91,26 +91,7 @@ namespace ImageProcessing
                 Console.ReadLine();
                 return (int)LogCodes.RETURN.MISSING_ARGUMENT;
             }
-            if (values.ContainsKey("folderInput") == false || values["folderInput"] == "")
-            {
-                Console.WriteLine("No folderInput.");
-                Console.ReadLine();
-                return (int)LogCodes.RETURN.MISSING_ARGUMENT;
-            }
             
-            if (File.Exists(Path.Combine(values["folderInput"], values["fileName"])) == false)
-            {
-                Console.WriteLine("File does not exist.");
-                Console.ReadLine();
-                return (int)LogCodes.RETURN.FILE_NOT_FOUND;
-            }
-            if (Directory.Exists(values["folderOutput"]) == false)
-            {
-                Console.WriteLine("No output folder.");
-                Console.ReadLine();
-                return (int)LogCodes.RETURN.NO_SUCH_DIRECTORY;
-            }
-
             if (values.ContainsKey("width") == false || values["width"] == "")
             {
                 Console.WriteLine("No no width.");

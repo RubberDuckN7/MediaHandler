@@ -53,18 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cleanup\ResourceHandler.cs" />
-    <Compile Include="Processes\ImageHelper.cs" />
-    <Compile Include="Processes\CompressionProcess.cs" />
-    <Compile Include="Processes\ConversionProcess.cs" />
-    <Compile Include="Processes\ImageProcess.cs" />
-    <Compile Include="Processes\ProcessTaskInterface.cs" />
-    <Compile Include="Processes\TaskInterface.cs" />
+    <Compile Include="ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\CompressionSettings.cs" />
     <Compile Include="Settings\ConversionSettings.cs" />
     <Compile Include="Settings\ImageSettings.cs" />
-    <Compile Include="Settings\SchedulerSettings.cs" />
+    <Compile Include="Settings\MediaSettings.cs" />
     <Compile Include="Settings\SettingsHelper.cs" />
     <Compile Include="Settings\ThumbnailSettings.cs" />
   </ItemGroup>
